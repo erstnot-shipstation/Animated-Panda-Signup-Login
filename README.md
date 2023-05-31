@@ -1,16 +1,14 @@
-# Bolierplate code for flutter
+# Playful Panda Pals
 
-A new Flutter project.
+A Charming Animated Signup and Login Adventure! in Flutter along with boilerplate code for whole project following the best practices
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Initial setup run the following command before starting the project:
 
-A few resources to get you started if this is your first Flutter project:
+    $ flutter pub get && flutter pub run build_runner watch --delete-conflicting-outputs
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Run the project:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+    $ flutter run
+
