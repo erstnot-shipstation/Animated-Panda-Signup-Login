@@ -3,7 +3,6 @@ import '../../routes/routes.dart';
 import '../../stores/introduction/introduction.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
 class Introduction extends StatefulWidget {

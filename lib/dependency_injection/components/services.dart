@@ -1,3 +1,4 @@
+import '../../data/localdb/profile_datasource.dart';
 import '../../data/repository.dart';
 import '../../data/shared_prefs/sharedpref_helper.dart';
 import '../../dependency_injection/modules/localmodule.dart';
@@ -17,9 +18,10 @@ Future<void> setupLocator() async {
 
   getIt.registerSingleton(
       SharedPreferenceHelper(await getIt.getAsync<SharedPreferences>()));
-
+  getIt.registerSingleton(ProfileDataSource(await getIt.getAsync<Database>()));
   getIt.registerSingleton(Repository(
     getIt<SharedPreferenceHelper>(),
+    getIt<ProfileDataSource>(),
   ));
 
   //Stores

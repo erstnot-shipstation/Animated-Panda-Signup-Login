@@ -1,10 +1,14 @@
 import '../../data/shared_prefs/sharedpref_helper.dart';
+import '../models/profile.dart';
+import 'localdb/profile_datasource.dart';
 
 class Repository {
   final SharedPreferenceHelper _sharedPreferenceHelper;
+  final ProfileDataSource _profileDataSource;
 
   Repository(
     this._sharedPreferenceHelper,
+    this._profileDataSource,
   );
 
   //Introduction screen functions
@@ -38,7 +42,20 @@ class Repository {
   }
 
   //Profile Store
+  //Profile Store
   bool? get getProfileInputDone {
     return _sharedPreferenceHelper.getProfileInputDone();
+  }
+
+  Future<bool> setProfileInputDone(bool value) {
+    return _sharedPreferenceHelper.setProfileInputDone(value);
+  }
+
+  Future<ProfileModel?> getProfileData() {
+    return _profileDataSource.getProfileData();
+  }
+
+  Future<dynamic> setProfileData(ProfileModel profileModel) {
+    return _profileDataSource.setProfileData(profileModel);
   }
 }

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
+import '../ui/home/home.dart';
+import '../ui/signup/otp.dart';
+
 class Routes {
   Routes._();
 
@@ -12,10 +15,12 @@ class Routes {
   static const String viewProfile = '/profileView';
   static const String addRecord = '/addRecord';
   static const String introduction = '/introduction';
+  static const String otp = '/otp';
 
   static final routes = <String, WidgetBuilder>{
     introduction: (BuildContext context) => IntroductionScreen(),
-    // home: (BuildContext context) => const HomeScreen(),
+    otp: (BuildContext context) => const OtpScreen(),
+    home: (BuildContext context) => const HomeScreen(),
     // profile: (BuildContext context) => const ProfileScreen(),
     // viewProfile: (BuildContext context) => const ViewProfile(),
     // addRecord: (BuildContext context) => const AddRecord(),

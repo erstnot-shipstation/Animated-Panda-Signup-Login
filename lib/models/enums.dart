@@ -1,0 +1,1 @@
+enum SubmitState { NOTTOUCHED, STARTED, ERROR, DONE }

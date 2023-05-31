@@ -1,4 +1,8 @@
 import 'dart:async';
+import 'package:boilerplate_code/ui/home/home.dart';
+import 'package:boilerplate_code/ui/signup/signup.dart';
+import 'package:boilerplate_code/ui/user_agreement/user_agreement.dart';
+
 import './data/repository.dart';
 import './dependency_injection/components/services.dart';
 import './global_theme/apptheme.dart';
@@ -7,9 +11,6 @@ import './stores/introduction/introduction.dart';
 import './stores/language/language.dart';
 import './stores/profile/profile.dart';
 import './stores/theme/theme.dart';
-import './ui/home/home.dart';
-import './ui/introduction/introduction.dart';
-import './ui/profile/profile.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:provider/provider.dart';
@@ -61,11 +62,11 @@ class MyApp extends StatelessWidget {
             theme: _themeStore.darkMode
                 ? AppThemeData.darkThemeData
                 : AppThemeData.lightThemeData,
-            home: _introductionStore.checkIfIntroductionIsDone
-                ? _profileStore.profileInputDone
-                    ? const HomeScreen()
-                    : const ProfileScreen()
-                : const Introduction(),
+            // TODO Enable the following if you want to check if profile is already created
+            // home: _profileStore.profileInputDone
+            //     ? const HomeScreen()
+            //     : const SignupScreen(),
+            home: const SignupScreen(),
             routes: Routes.routes,
             supportedLocales: const [
               Locale('en'),

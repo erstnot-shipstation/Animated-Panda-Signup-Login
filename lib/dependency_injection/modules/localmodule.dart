@@ -1,4 +1,3 @@
-import '../../data/database_encryption/encryption.dart';
 import '../../data/localdb/constants/db_constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sembast/sembast.dart';
@@ -18,9 +17,6 @@ abstract class LocalModule {
   ///
   /// Calling it multiple times will return the same instance.
   static Future<Database> provideDatabase() async {
-    // Key for database_encryption
-    var encryptionKey = "";
-
     // Get a platform-specific directory where persistent app data can be stored
     final appDocumentDir = await getApplicationDocumentsDirectory();
 
@@ -29,15 +25,7 @@ abstract class LocalModule {
 
     // Check to see if database_encryption is set, then provide codec
     // else init normal db with path
-    // ignore: prefer_typing_uninitialized_variables
-    var database;
-    if (encryptionKey.isNotEmpty) {
-      // Initialize the database_encryption codec with a user password
-      var codec = getXXTeaCodec(password: encryptionKey);
-      database = await databaseFactoryIo.openDatabase(dbPath, codec: codec);
-    } else {
-      database = await databaseFactoryIo.openDatabase(dbPath);
-    }
+    var database = await databaseFactoryIo.openDatabase(dbPath);
 
     // Return database instance
     return database;

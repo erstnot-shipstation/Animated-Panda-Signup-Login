@@ -12,7 +12,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Container(
       height: 200,
-      color: Colors.green,
+      color: Colors.white,
+      child: const Center(child: Text("HomeScreen")),
     );
   }
 }
